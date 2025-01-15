@@ -192,7 +192,7 @@ const Formulario = () => {
       Video: valorVideo,
       Categoria: categoriaSeleccionada,
       Descripcion: valorDesc,
-      url:url,
+      
     };
 
     setLoading(true);
