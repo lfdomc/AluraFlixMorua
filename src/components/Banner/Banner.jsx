@@ -45,7 +45,7 @@ const SubContainer = styled.section`
 
 const BannerStyle = styled.section`
   width: 100vw;
-  height: 100vh;
+  height: autovh;
   position: relative;
   overflow: hidden; // Evita que el contenido adicional de la imagen sea visible fuera del contenedor
   margin: 0;
