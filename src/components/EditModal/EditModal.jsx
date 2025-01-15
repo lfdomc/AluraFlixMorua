@@ -212,7 +212,7 @@ const EditModal = ({ isOpen, onClose }) => {
     const updatedVideos = videos.map((video) =>
       video.id === editVideo.id ? updatedVideo : video
     );
-
+    console.log(updatedVideo)
     try {
       const response = await fetch(`https://alura-flix-fake-oiwx.vercel.app/videos/${editVideo.id}`, {  // Use the `url` from context
         method: "PUT",
@@ -221,9 +221,11 @@ const EditModal = ({ isOpen, onClose }) => {
       });
 
       if (!response.ok) {
-        console.error("Error al actualizar el video");
-        return;
-      }
+    const errorDetails = await response.json();
+    console.error("Error al actualizar el video:", errorDetails);
+    alert(`Error: ${errorDetails.message || "No se pudo actualizar el video."}`);
+    return;
+}
 
       setVideos(updatedVideos);
       alert("Video actualizado correctamente");
