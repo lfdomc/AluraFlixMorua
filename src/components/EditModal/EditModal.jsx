@@ -176,6 +176,7 @@ const EditModal = ({ isOpen, onClose }) => {
     setValorVideo,
     setValorDesc,
     setCategoriaSeleccionada,
+    url, // Access the URL from GlobalContext
   } = useContext(GlobalContext);
 
   const [errors, setErrors] = useState({});
@@ -192,16 +193,11 @@ const EditModal = ({ isOpen, onClose }) => {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!editVideo.Titulo.trim())
-      newErrors.titulo = "El título es obligatorio.";
-    if (!editVideo.Imagen.trim())
-      newErrors.imagen = "El enlace de la imagen es obligatorio.";
-    if (!editVideo.Video.trim())
-      newErrors.video = "El enlace del video es obligatorio.";
-    if (!editVideo.Categoria)
-      newErrors.categoria = "Debe seleccionar una categoría.";
-    if (!editVideo.Descripcion.trim())
-      newErrors.descripcion = "Debe tener descripción.";
+    if (!editVideo.Titulo.trim()) newErrors.titulo = "El título es obligatorio.";
+    if (!editVideo.Imagen.trim()) newErrors.imagen = "El enlace de la imagen es obligatorio.";
+    if (!editVideo.Video.trim()) newErrors.video = "El enlace del video es obligatorio.";
+    if (!editVideo.Categoria) newErrors.categoria = "Debe seleccionar una categoría.";
+    if (!editVideo.Descripcion.trim()) newErrors.descripcion = "Debe tener descripción.";
     return newErrors;
   };
 
@@ -218,14 +214,11 @@ const EditModal = ({ isOpen, onClose }) => {
     );
 
     try {
-      const response = await fetch(
-        `http://localhost:3000/videos/${editVideo.id}`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(updatedVideo),
-        }
-      );
+      const response = await fetch(`${url}/${editVideo.id}`, {  // Use the `url` from context
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedVideo),
+      });
 
       if (!response.ok) {
         console.error("Error al actualizar el video");
@@ -259,9 +252,7 @@ const EditModal = ({ isOpen, onClose }) => {
             label="Título"
             placeholder="Ingrese el título"
             value={editVideo?.Titulo || ""}
-            setValorTitulo={(val) =>
-              setEditVideo({ ...editVideo, Titulo: val })
-            }
+            setValorTitulo={(val) => setEditVideo({ ...editVideo, Titulo: val })}
           />
           {errors.titulo && <ErrorText>{errors.titulo}</ErrorText>}
         </SectionInput>
@@ -270,9 +261,7 @@ const EditModal = ({ isOpen, onClose }) => {
             label="Imagen"
             placeholder="Ingrese el enlace de la imagen"
             value={editVideo?.Imagen || ""}
-            setValorImagen={(val) =>
-              setEditVideo({ ...editVideo, Imagen: val })
-            }
+            setValorImagen={(val) => setEditVideo({ ...editVideo, Imagen: val })}
           />
           {errors.imagen && <ErrorText>{errors.imagen}</ErrorText>}
         </SectionInput>
@@ -290,13 +279,6 @@ const EditModal = ({ isOpen, onClose }) => {
           <Select
             value={editVideo?.Categoria || ""}
             onChange={handleCategoryChange}
-            style={{
-              width: "100%",
-              padding: "10px",
-              backgroundColor: "#03122F",
-              color: "#f5f5f5",
-              borderRadius: "4px",
-            }}
           >
             <option value="">Seleccionar categoría</option>
             <option value="FRONT END">FRONT END</option>
@@ -328,3 +310,4 @@ const EditModal = ({ isOpen, onClose }) => {
 };
 
 export default EditModal;
+
