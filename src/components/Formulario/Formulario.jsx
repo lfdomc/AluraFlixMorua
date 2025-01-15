@@ -154,6 +154,7 @@ const Formulario = () => {
     setCategoriaSeleccionada,
     videos,
     setVideos,
+    url,
   } = React.useContext(GlobalContext);
 
   const [loading, setLoading] = React.useState(false);
@@ -206,7 +207,7 @@ const Formulario = () => {
   };
 
   const registrarVideo = async (dataToSend) => {
-    const url = "http://localhost:3000/videos";
+  
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -303,3 +304,4 @@ const Formulario = () => {
 };
 
 export default Formulario;
+
