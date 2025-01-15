@@ -202,39 +202,39 @@ const EditModal = ({ isOpen, onClose }) => {
   };
 
   const handleUpdate = async () => {
-    const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
+  const validationErrors = validateForm();
+  if (Object.keys(validationErrors).length > 0) {
+    setErrors(validationErrors);
+    return;
+  }
+
+  const updatedVideo = { ...editVideo };
+  const updatedVideos = videos.map((video) =>
+    video.id === editVideo.id ? updatedVideo : video
+  );
+
+  try {
+    const response = await fetch(`${url}/videos/${editVideo.id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(updatedVideo),
+    });
+
+    if (!response.ok) {
+      const errorDetails = await response.json();
+      console.error("Error al actualizar el video:", errorDetails);
+      alert(`Error: ${errorDetails.message || "No se pudo actualizar el video."}`);
       return;
     }
 
-    const updatedVideo = { ...editVideo };
-    const updatedVideos = videos.map((video) =>
-      video.id === editVideo.id ? updatedVideo : video
-    );
-    console.log(updatedVideo)
-    try {
-      const response = await fetch(`https://alura-flix-fake-oiwx.vercel.app/videos/${editVideo.id}`, {  // Use the `url` from context
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(updatedVideo),
-      });
-
-      if (!response.ok) {
-    const errorDetails = await response.json();
-    console.error("Error al actualizar el video:", errorDetails);
-    alert(`Error: ${errorDetails.message || "No se pudo actualizar el video."}`);
-    return;
-}
-
-      setVideos(updatedVideos);
-      alert("Video actualizado correctamente");
-      onClose();
-    } catch (error) {
-      console.error("Error al actualizar el video:", error);
-      alert("Hubo un error al actualizar el video");
-    }
-  };
+    setVideos(updatedVideos);
+    alert("Video actualizado correctamente");
+    onClose();
+  } catch (error) {
+    console.error("Error al actualizar el video:", error);
+    alert("Hubo un error al actualizar el video");
+  }
+};
 
   const handleCategoryChange = (e) => {
     setEditVideo({ ...editVideo, Categoria: e.target.value });
