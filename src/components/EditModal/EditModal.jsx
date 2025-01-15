@@ -214,7 +214,7 @@ const EditModal = ({ isOpen, onClose }) => {
     );
 
     try {
-      const response = await fetch(`${url}/${editVideo.id}`, {  // Use the `url` from context
+      const response = await fetch(`https://alura-flix-fake-oiwx.vercel.app/videos/${editVideo.id}`, {  // Use the `url` from context
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedVideo),
