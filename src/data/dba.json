@@ -1,0 +1,116 @@
+{
+  "videos": [
+    {
+      "id": "1",
+      "Titulo": "Equipo Front End #AluraMás",
+      "Imagen": "https://i.ytimg.com/vi/rpvrLaBQwgg/maxresdefault.jpg",
+      "Video": "https://www.youtube.com/watch?v=rpvrLaBQwgg",
+      "Categoria": "FRONT END",
+      "Descripcion": "En este video, Jeanmarie Quijada, instructora Front End en Alura Latam te explica qué hace el equipo de Front End."
+    },
+    {
+      "id": "2",
+      "Titulo": "Git y GitHub para Principiantes #AluraMás",
+      "Imagen": "https://i.ytimg.com/vi/-LmFK6skG7s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAnIViTpxVq8jZ0YmbVBmn5WdB0Zg",
+      "Video": "https://www.youtube.com/watch?v=-LmFK6skG7s",
+      "Categoria": "BACK END",
+      "Descripcion": "Ve cómo funciona esta famosa herramienta de colaboración muy utilizada en el universo de la tecnología y tiene el control de las diferentes versiones de tus proyectos.."
+    },
+    {
+      "id": "3",
+      "Titulo": "¿Cómo un desarrollador Front End utiliza el Figma? #AluraMás",
+      "Imagen": "https://i.ytimg.com/vi/UuAX5azcvDQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBv35TL2JpK7AdWOdaO3y-W5LdKwA",
+      "Video": "https://www.youtube.com/watch?v=UuAX5azcvDQ&t=15s",
+      "Categoria": "FRONT END",
+      "Descripcion": "En este Alura+, Genesys, instructora de Alura Latam, nos responde esa pregunta y nos muestra esta conocida herramienta."
+    },
+    {
+      "id": "4",
+      "Titulo": "¿Qué son las Soft Skills?",
+      "Imagen": "https://i.ytimg.com/vi/vhwspfvI52k/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD6gXiKiza0PJa4GrYBxe5ST8-5PQ",
+      "Video": "https://www.youtube.com/watch?v=vhwspfvI52k&t=1s",
+      "Categoria": "INOVACIÓN Y GESTIÓN",
+      "Descripcion": "En este video de Alura Tips, Pri Stuani nos habla de las habilidades más buscadas por las empresas en sus profesionales y cómo las Soft Skills te ayudan en el día a día."
+    },
+    {
+      "id": "5",
+      "Titulo": "¿Qué es JavaScript?",
+      "Imagen": "https://i.ytimg.com/vi/GJfOSoaXk4s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAkd-YmtXSL0q2mEZR0LZe3llwWFA",
+      "Video": "https://www.youtube.com/watch?v=GJfOSoaXk4s",
+      "Categoria": "FRONT END",
+      "Descripcion": "JavaScript: ¿qué es y cómo se hizo este lenguaje que genera muchas discusiones y debates entre la gente del área de desarrollo? "
+    },
+    {
+      "id": "6",
+      "Titulo": "¿Por Qué Estudiar Programación?",
+      "Imagen": "https://i.ytimg.com/vi/PlaQ913yggM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC9h6gI95X-QXc-ZSmaH3zA9dhqkw",
+      "Video": "https://www.youtube.com/watch?v=PlaQ913yggM",
+      "Categoria": "INNOVACIÓN Y GESTIÓN",
+      "Descripcion": "¿Por Qué Estudiar Programación? ¿Qué es? ¿Dónde está? ¿Y para qué se utiliza la programación? En este video el Head de Alura Latam, Christian Velasco nos responde esas y otras dudas."
+    },
+    {
+      "id": "7",
+      "Titulo": "¿Qué es SQL y NoSQL?",
+      "Imagen": "https://i.ytimg.com/vi/cLLKVd5CNLc/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAkfbWrdjK-FUCYCImjAoRN1tNMqQ",
+      "Video": "https://www.youtube.com/watch?v=cLLKVd5CNLc",
+      "Categoria": "BACK END",
+      "Descripcion": "¿Cuáles son las diferencias entre una estructura de datos relacional (SQL) y una no relacional (NoSQL) y cuáles son las principales ventajas de cada una? Álvaro Camacho lo explica en este vídeo."
+    },
+    {
+      "id": "8",
+      "Titulo": "¿Por qué estudiar Data Science?",
+      "Imagen": "https://i.ytimg.com/vi/7_UXo-aqAeM/hqdefault.jpg",
+      "Video": "https://www.youtube.com/watch?v=7_UXo-aqAeM&list=PLNKOkLkhi1Ke9j-o8dn6pdG38VPhAoJ1Y&index=2",
+      "Categoria": "INOVACIÓN Y GESTIÓN",
+      "Descripcion": "Explicacion detallada del mundo de Data Science y todos sus recursos como Machine Learning"
+    },
+    {
+      "id": "9",
+      "Titulo": "Frameworks de Front End - Edición especial",
+      "Imagen": "https://i.ytimg.com/vi/UNeKzI2WHgQ/hqdefault.jpg",
+      "Video": "https://www.youtube.com/watch?v=UNeKzI2WHgQ&list=PLNKOkLkhi1Ke9j-o8dn6pdG38VPhAoJ1Y&index=19",
+      "Categoria": "FRONT END",
+      "Descripcion": "En este video nuestro instructor de Front End nos explicarás cuáles son los frameworks de Front más conocidos y las diferencias entre ellos."
+    },
+    {
+      "id": "1736769871125",
+      "Titulo": "¿Cuáles son las barreras de género en el área de tecnología?",
+      "Imagen": "https://i.ytimg.com/vi/jMVULhfUYGM/hqdefault.jpg",
+      "Video": "https://www.youtube.com/watch?v=jMVULhfUYGM&list=PLNKOkLkhi1Ke9j-o8dn6pdG38VPhAoJ1Y&index=8",
+      "Categoria": "INNOVACIÓN Y GESTIÓN",
+      "Descripcion": "En este video, este grupo de talentosas mujeres de la tecnología hablan de las barreras, dificultades y brechas de género en el área."
+    },
+    {
+      "id": "1736770223108",
+      "Titulo": "¿Por qué utilizar Java actualmente?",
+      "Imagen": "https://i.ytimg.com/vi/3kNuK-XAHEY/hqdefault.jpg",
+      "Video": "https://www.youtube.com/watch?v=3kNuK-XAHEY&list=PLNKOkLkhi1Ke9j-o8dn6pdG38VPhAoJ1Y&index=13",
+      "Categoria": "BACK END",
+      "Descripcion": "En este video, hablaremos de lo último en el lenguaje y la plataforma Java y de por qué debería ser tu elección para un próximo proyecto."
+    },
+    {
+      "id": "1736902971697",
+      "Titulo": "¿Cómo es el día a día de una Científica de Datos?",
+      "Imagen": "https://i.ytimg.com/vi/cOvpf3Q-ii4/hqdefault.jpg",
+      "Video": "https://www.youtube.com/watch?v=cOvpf3Q-ii4&list=PLNKOkLkhi1Ke9j-o8dn6pdG38VPhAoJ1Y&index=15",
+      "Categoria": "INNOVACIÓN Y GESTIÓN",
+      "Descripcion": "Ven y conoce como es el día a día laboral de una persona que trabaja con datos y como al interpretarlos genera valor para la empresa."
+    },
+    {
+      "id": "4",
+      "Titulo": "¿Qué son las Soft Skills?",
+      "Imagen": "https://i.ytimg.com/vi/vhwspfvI52k/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLD6gXiKiza0PJa4GrYBxe5ST8-5PQ",
+      "Video": "https://www.youtube.com/watch?v=vhwspfvI52k&t=1s",
+      "Categoria": "INNOVACIÓN Y GESTIÓN",
+      "Descripcion": "En este video de Alura Tips, Pri Stuani nos habla de las habilidades más buscadas por las empresas en sus profesionales y cómo las Soft Skills te ayudan en el día a día."
+    },
+    {
+      "id": "1736903702319",
+      "Titulo": "Especialidad BACKEND | RESUMEN SEMANA 1 - 3 | Oracle Next Education + Alura Latam",
+      "Imagen": "https://i.ytimg.com/vi/b71kWley8-o/maxresdefault.jpg",
+      "Video": "https://www.youtube.com/watch?v=b71kWley8-o",
+      "Categoria": "BACK END",
+      "Descripcion": "Bienvenidos al Resumen de la semana 1, 2 y 3 de la especialización en Backend de Oracle Next Education"
+    }
+  ]
+}
