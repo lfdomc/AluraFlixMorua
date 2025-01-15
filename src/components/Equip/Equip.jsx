@@ -51,25 +51,23 @@ const ContainerEquips = styled.section`
 const Equip = (props) => {
   const { videos, setVideos,url } = useContext(GlobalContext);
 
-  const deleteVideo = (id) => {
-    setVideos((prevVideos) => prevVideos.filter((video) => video.id !== id));
-  
-    fetch(`${url}/${id}`, { // Corrección: usa `${url}/${id}`
-      method: "DELETE",
+ const deleteVideo = (id) => {
+  setVideos((prevVideos) => prevVideos.filter((video) => video.id !== id));
+
+  fetch(`${url}/${id}`, { method: "DELETE" })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error al eliminar el video: " + response.statusText);
+      }
+      return response.json();
     })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Error al eliminar el video: " + response.statusText);
-        }
-        return response.json();
-      })
-      .then(() => {
-        console.log("Video eliminado de la base de datos");
-      })
-      .catch((error) => {
-        console.error("Error al eliminar el video", error);
-      });
-  };
+    .then(() => {
+      console.log("Video eliminado de la base de datos");
+    })
+    .catch((error) => {
+      console.error("Error al eliminar el video", error);
+    });
+};
 
   const filteredVideos = videos.filter(
     (video) => video.Categoria === props.bannerText
