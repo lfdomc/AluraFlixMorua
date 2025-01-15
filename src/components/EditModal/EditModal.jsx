@@ -240,6 +240,7 @@ const EditModal = ({ isOpen, onClose }) => {
       console.error("Error al actualizar el video:", error);
       alert("Hubo un error al actualizar el video");
     }
+    {onClose}
   };
 
   const handleCategoryChange = (e) => {
@@ -318,7 +319,7 @@ const EditModal = ({ isOpen, onClose }) => {
           {errors.descripcion && <ErrorText>{errors.descripcion}</ErrorText>}
         </SectionLargeInput>
         <ButtonGroup>
-          <Button onClick={handleUpdate}>Guardar</Button>
+          <Button onClick={handleUpdate} >Guardar</Button>
           <Button color="red" $hoverColor="#b20000" onClick={onClose}>
             Cancelar
           </Button>
@@ -329,4 +330,5 @@ const EditModal = ({ isOpen, onClose }) => {
 };
 
 export default EditModal;
+
 
