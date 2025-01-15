@@ -207,7 +207,7 @@ const Formulario = () => {
   };
 
   const registrarVideo = async (dataToSend) => {
-    console.log(url)
+  
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -286,7 +286,7 @@ const Formulario = () => {
         </SectionLargeInput>
         <SectionButton>
           <FormButton
-            text={loading ? "GUARDANDO...." : "GUARDAR"}
+            text={loading ? "GUARDANDO..." : "GUARDAR"}
             color="#2271D1"
             type="submit"
             disabled={loading}
