@@ -49,12 +49,12 @@ const ContainerEquips = styled.section`
 `;
 
 const Equip = (props) => {
-  const { videos, setVideos } = useContext(GlobalContext);
+  const { videos, setVideos,url } = useContext(GlobalContext);
 
   const deleteVideo = (id) => {
     setVideos((prevVideos) => prevVideos.filter((video) => video.id !== id));
-
-    fetch(`http://localhost:3000/videos/${id}`, {
+  
+    fetch(`${url}/${id}`, { // Corrección: usa `${url}/${id}`
       method: "DELETE",
     })
       .then((response) => {
