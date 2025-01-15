@@ -25,8 +25,8 @@ const ModalContainer = styled.div`
   color: #f5f5f5;
   border-radius: 8px;
   border: 6px solid #6bd1ff;
-  max-height: 80vh; /* Para limitar la altura máxima */
-  overflow-y: auto; /* Permite el desplazamiento vertical */
+  max-height: 80vh;
+  overflow-y: auto;
 
   @media (max-width: 600px) {
     padding: 2% 5%;
@@ -108,7 +108,6 @@ const ButtonGroup = styled.div`
   margin-top: 2rem;
 
   @media (max-width: 600px) {
-   
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
@@ -116,7 +115,6 @@ const ButtonGroup = styled.div`
 `;
 
 const Button = styled.button`
-  
   margin-bottom: 70px;
   width: 180.12px;
   height:50px;
@@ -131,7 +129,6 @@ const Button = styled.button`
   background-color: transparent;  
   text-align: center;
 
- 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,7 +161,6 @@ const Imagen = styled.img`
 
 `
 
-
 const EditModal = ({ isOpen, onClose }) => {
   const {
     editVideo,
@@ -193,16 +189,11 @@ const EditModal = ({ isOpen, onClose }) => {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!editVideo.Titulo.trim())
-      newErrors.titulo = "El título es obligatorio.";
-    if (!editVideo.Imagen.trim())
-      newErrors.imagen = "El enlace de la imagen es obligatorio.";
-    if (!editVideo.Video.trim())
-      newErrors.video = "El enlace del video es obligatorio.";
-    if (!editVideo.Categoria)
-      newErrors.categoria = "Debe seleccionar una categoría.";
-    if (!editVideo.Descripcion.trim())
-      newErrors.descripcion = "Debe tener descripción.";
+    if (!editVideo.Titulo.trim()) newErrors.titulo = "El título es obligatorio.";
+    if (!editVideo.Imagen.trim()) newErrors.imagen = "El enlace de la imagen es obligatorio.";
+    if (!editVideo.Video.trim()) newErrors.video = "El enlace del video es obligatorio.";
+    if (!editVideo.Categoria) newErrors.categoria = "Debe seleccionar una categoría.";
+    if (!editVideo.Descripcion.trim()) newErrors.descripcion = "Debe tener descripción.";
     return newErrors;
   };
 
@@ -212,35 +203,38 @@ const EditModal = ({ isOpen, onClose }) => {
       setErrors(validationErrors);
       return;
     }
-  
+
     const updatedVideo = { ...editVideo };
     const updatedVideos = videos.map((video) =>
       video.id === editVideo.id ? updatedVideo : video
     );
-  
+
     try {
       const response = await fetch(
-        `${url}/${editVideo.id}`, // Corrección: usa `${url}/${editVideo.id}`
+        `${url}/${editVideo.id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(updatedVideo),
         }
       );
-  
+
       if (!response.ok) {
         console.error("Error al actualizar el video");
-        return;
+        throw new Error("Error al actualizar el video");
       }
-  
+
       setVideos(updatedVideos);
       alert("Video actualizado correctamente");
-      onClose();
+      onClose();  // Cierra el modal
+      window.location.reload();  // Refresca la página
+
     } catch (error) {
       console.error("Error al actualizar el video:", error);
       alert("Hubo un error al actualizar el video");
+      onClose();  // Cierra el modal
+      window.location.reload();  // Refresca la página
     }
-    {onClose}
   };
 
   const handleCategoryChange = (e) => {
@@ -330,5 +324,3 @@ const EditModal = ({ isOpen, onClose }) => {
 };
 
 export default EditModal;
-
-
