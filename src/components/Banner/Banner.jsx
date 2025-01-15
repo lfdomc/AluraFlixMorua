@@ -91,9 +91,11 @@ const Texto = styled.h1`
 const Imagen = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; // Asegura que la imagen cubra todo el contenedor sin deformarse
+  position: absolute; // Asegura que se adapte al contenedor padre
+  top: 0;
+  left: 0;
   z-index: 1;
-  padding-bottom:40px;
 
   @media (max-width: 427px) {
     display: none; 
