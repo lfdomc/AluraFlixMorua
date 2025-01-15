@@ -47,13 +47,14 @@ const BannerStyle = styled.section`
   width: 100vw;
   height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; // Evita que el contenido adicional de la imagen sea visible fuera del contenedor
   margin: 0;
   padding: 0;
+
   @media (max-width: 427px) {
     visibility: hidden;
     height: 0;
-    display: none;  // Se añade display: none para eliminar el espacio ocupado por el banner.
+    display: none;
   }
 `;
 
@@ -89,16 +90,16 @@ const Texto = styled.h1`
 
 const Imagen = styled.img`
   width: 100%;
-  height: auto%;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover; // Asegura que la imagen cubra todo el contenedor sin deformarse
+  position: absolute; // Asegura que se adapte al contenedor padre
+  top: 0;
+  left: 0;
   z-index: 1;
-  padding-bottom:40px;
 
   @media (max-width: 427px) {
     display: none; 
   }
-
- 
 `;
 
 const Banner = () => {
