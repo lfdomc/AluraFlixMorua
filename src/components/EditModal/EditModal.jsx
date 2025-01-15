@@ -220,8 +220,8 @@ const EditModal = ({ isOpen, onClose }) => {
   );
 
   try {
-    console.log(`Enviando petición PUT a: ${url}/videos/${editVideo.id}`);
-    const response = await fetch(`${url}/videos/${editVideo.id}`, {
+    console.log(`Enviando petición PUT a: ${url}/${editVideo.id}`);
+    const response = await fetch(`${url}/${editVideo.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedVideo),
