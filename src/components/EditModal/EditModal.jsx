@@ -213,7 +213,7 @@ const EditModal = ({ isOpen, onClose }) => {
   }
 
   const updatedVideo = { ...editVideo };
-  console.log("Video actualizado preparado para enviar:", updatedVideo);
+  console.log("Datos enviados:", JSON.stringify(updatedVideo, null, 2));
 
   const updatedVideos = videos.map((video) =>
     video.id === editVideo.id ? updatedVideo : video
@@ -227,12 +227,10 @@ const EditModal = ({ isOpen, onClose }) => {
       body: JSON.stringify(updatedVideo),
     });
 
-    console.log("Respuesta del servidor:", response);
-
     if (!response.ok) {
-      const errorDetails = await response.json();
-      console.error("Error al actualizar el video en el servidor:", errorDetails);
-      alert(`Error: ${errorDetails.message || "No se pudo actualizar el video."}`);
+      const errorText = await response.text();
+      console.error("Error del servidor:", errorText);
+      alert(`Error: ${errorText || "No se pudo actualizar el video."}`);
       return;
     }
 
@@ -247,6 +245,7 @@ const EditModal = ({ isOpen, onClose }) => {
     alert("Hubo un error al actualizar el video");
   }
 };
+
 
 
   const handleCategoryChange = (e) => {
