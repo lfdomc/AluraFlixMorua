@@ -16,7 +16,7 @@ const GlobalContextProvider = ({ children }) => {
   const [editVideo, setEditVideo] = useState(null);
 
   const [videos, setVideos] = useState([]);
-  const url = "http://localhost:3000/videos"
+  const url = "https://alura-flix-fake-oiwx.vercel.app/videos"
 
   
   
