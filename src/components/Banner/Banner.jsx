@@ -45,21 +45,15 @@ const SubContainer = styled.section`
 
 const BannerStyle = styled.section`
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   position: relative;
-  overflow: hidden; // Evita que el contenido adicional de la imagen sea visible fuera del contenedor
+  overflow: hidden;
   margin: 0;
   padding: 0;
-
   @media (max-width: 427px) {
     visibility: hidden;
     height: 0;
-    display: none;
-  }
-   @media (max-width: 427px) {
-    visibility: hidden;
-    height: 0;
-    display: none;
+    display: none;  // Se añade display: none para eliminar el espacio ocupado por el banner.
   }
 `;
 
