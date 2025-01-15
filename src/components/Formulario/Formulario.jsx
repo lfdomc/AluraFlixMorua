@@ -192,6 +192,7 @@ const Formulario = () => {
       Video: valorVideo,
       Categoria: categoriaSeleccionada,
       Descripcion: valorDesc,
+      url:url,
     };
 
     setLoading(true);
@@ -207,7 +208,7 @@ const Formulario = () => {
   };
 
   const registrarVideo = async (dataToSend) => {
-  
+    console.log(url)
     const response = await fetch(url, {
       method: "POST",
       headers: {
