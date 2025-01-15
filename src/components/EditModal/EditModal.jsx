@@ -225,13 +225,13 @@ const EditModal = ({ isOpen, onClose }) => {
       }
 
       setVideos(updatedVideos);
-      alert("Video actualizado correctamente");
+      //alert("Video actualizado correctamente");
       onClose();  // Cierra el modal
       window.location.reload();  // Refresca la página
 
     } catch (error) {
       console.error("Error al actualizar el video:", error);
-      alert("Hubo un error al actualizar el video");
+      //alert("Hubo un error al actualizar el video");
       onClose();  // Cierra el modal
       window.location.reload();  // Refresca la página
     }
