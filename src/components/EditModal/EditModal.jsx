@@ -202,39 +202,52 @@ const EditModal = ({ isOpen, onClose }) => {
   };
 
   const handleUpdate = async () => {
+  console.log("Iniciando actualización de video...");
+  console.log("Estado actual de editVideo:", editVideo);
+
   const validationErrors = validateForm();
   if (Object.keys(validationErrors).length > 0) {
+    console.warn("Errores de validación:", validationErrors);
     setErrors(validationErrors);
     return;
   }
 
   const updatedVideo = { ...editVideo };
+  console.log("Video actualizado preparado para enviar:", updatedVideo);
+
   const updatedVideos = videos.map((video) =>
     video.id === editVideo.id ? updatedVideo : video
   );
 
   try {
+    console.log(`Enviando petición PUT a: ${url}/videos/${editVideo.id}`);
     const response = await fetch(`${url}/videos/${editVideo.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedVideo),
     });
 
+    console.log("Respuesta del servidor:", response);
+
     if (!response.ok) {
       const errorDetails = await response.json();
-      console.error("Error al actualizar el video:", errorDetails);
+      console.error("Error al actualizar el video en el servidor:", errorDetails);
       alert(`Error: ${errorDetails.message || "No se pudo actualizar el video."}`);
       return;
     }
 
+    console.log("Petición PUT exitosa. Actualizando estado local de videos...");
     setVideos(updatedVideos);
+    console.log("Videos después de la actualización:", updatedVideos);
+
     alert("Video actualizado correctamente");
     onClose();
   } catch (error) {
-    console.error("Error al actualizar el video:", error);
+    console.error("Error al realizar la petición PUT:", error);
     alert("Hubo un error al actualizar el video");
   }
 };
+
 
   const handleCategoryChange = (e) => {
     setEditVideo({ ...editVideo, Categoria: e.target.value });
